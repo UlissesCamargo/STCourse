@@ -6,17 +6,7 @@ Swag Labs Purchase
     [Documentation]    Demonstrate a login, adding items, removing one, and completing checkout.
 
     # 1) Open Browser with desired capabilities
-    Open Browser    https://ulissescamargo.github.io/STCourse/swag_labs.html    Chrome
-    ...    desired_capabilities={
-    ...        "goog:chromeOptions": {
-    ...            "args": [
-    ...                "--headless",
-    ...                "--no-sandbox",
-    ...                "--disable-dev-shm-usage",
-    ...                "--disable-gpu"
-    ...            ]
-    ...        }
-    ...    }
+    Open Browser    https://ulissescamargo.github.io/STCourse/swag_labs.html    headlesschrome
 
     Maximize Browser Window
     Wait Until Element Is Visible    id:username
