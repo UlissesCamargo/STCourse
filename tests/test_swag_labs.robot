@@ -8,7 +8,6 @@ Swag Labs Purchase
     Open Browser    https://ulissescamargo.github.io/STCourse/swag_labs.html    Chrome
     ...    options=--headless
     ...    options=--no-sandbox
-    ...    options=--disable-dev-shm-usage
 
     # The rest of your test steps:
     Maximize Browser Window
