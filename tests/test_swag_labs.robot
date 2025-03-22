@@ -5,6 +5,7 @@ Library    SeleniumLibrary
 Swag Labs Purchase
     [Documentation]    Demonstrate a login, adding items, removing one, and completing checkout.
 
+    # 1) Open Browser with desired capabilities
     Open Browser    https://ulissescamargo.github.io/STCourse/swag_labs.html    Chrome
     ...    desired_capabilities={
     ...        "goog:chromeOptions": {
@@ -17,7 +18,6 @@ Swag Labs Purchase
     ...        }
     ...    }
 
-    # The rest of your test steps:
     Maximize Browser Window
     Wait Until Element Is Visible    id:username
     Sleep    1s
@@ -56,13 +56,13 @@ Swag Labs Purchase
     Input Text      id:postal-code   12345
     Sleep    2s
 
-    # 6) Finish purchase
+    # 6) Scroll and click "Complete Purchase"
     Scroll Element Into View    xpath=//button[contains(text(),'Complete Purchase')]
     Sleep    1s
     Click Button    xpath=//button[contains(text(),'Complete Purchase')]
     Sleep    2s
 
-    # 7) Verify
+    # 7) Verify confirmation page
     Wait Until Element Is Visible    id:confirmation-page
     Sleep    3s
 
