@@ -6,7 +6,16 @@ Swag Labs Purchase
     [Documentation]    Demonstrate a login, adding items, removing one, and completing checkout.
 
     Open Browser    https://ulissescamargo.github.io/STCourse/swag_labs.html    Chrome
-    ...    options=--headless
+    ...    desired_capabilities={
+    ...        "goog:chromeOptions": {
+    ...            "args": [
+    ...                "--headless",
+    ...                "--no-sandbox",
+    ...                "--disable-dev-shm-usage",
+    ...                "--disable-gpu"
+    ...            ]
+    ...        }
+    ...    }
 
     # The rest of your test steps:
     Maximize Browser Window
