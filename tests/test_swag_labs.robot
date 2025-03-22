@@ -3,12 +3,15 @@ Library    SeleniumLibrary
 
 *** Test Cases ***
 Swag Labs Purchase
-    [Documentation]    Demonstrate a login, adding items, removing one, and completing checkout on the new Swag Labs page.
+    [Documentation]    Demonstrate a login, adding items, removing one, and completing checkout.
 
-    # 1) Open the page and log in
     Open Browser    https://ulissescamargo.github.io/STCourse/swag_labs.html    Chrome
-    ...    options=add_argument("--headless"),add_argument("--no-sandbox"),add_argument("--disable-dev-shm-usage"),add_argument("--disable-gpu")
+    ...    options=--headless
+    ...    options=--no-sandbox
+    ...    options=--disable-dev-shm-usage
+    ...    options=--disable-gpu
 
+    # The rest of your test steps:
     Maximize Browser Window
     Wait Until Element Is Visible    id:username
     Sleep    1s
@@ -18,7 +21,6 @@ Swag Labs Purchase
     Click Button   id:login-button
     Sleep    2s
 
-    # Wait for product page to become visible
     Wait Until Element Is Visible    id:product-page
     Sleep    1s
 
@@ -31,7 +33,7 @@ Swag Labs Purchase
     Click Button    xpath=//div[@id='products-grid']/div[3]//button
     Sleep    2s
 
-    # 3) Go to checkout by clicking the cart icon
+    # 3) Go to checkout
     Click Element   css:.cart-icon
     Sleep    2s
 
@@ -42,19 +44,19 @@ Swag Labs Purchase
     Click Button    xpath=//div[@id='cart-items']/div[1]//button[contains(text(),'Remove')]
     Sleep    2s
 
-    # 5) Fill out the payment data
+    # 5) Fill out payment data
     Input Text      id:first-name    John
     Input Text      id:last-name     Doe
     Input Text      id:postal-code   12345
     Sleep    2s
 
-    # 6) Scroll to and click "Complete Purchase"
+    # 6) Finish purchase
     Scroll Element Into View    xpath=//button[contains(text(),'Complete Purchase')]
     Sleep    1s
     Click Button    xpath=//button[contains(text(),'Complete Purchase')]
     Sleep    2s
 
-    # 7) Verify the confirmation page
+    # 7) Verify
     Wait Until Element Is Visible    id:confirmation-page
     Sleep    3s
 
