@@ -9,7 +9,6 @@ Swag Labs Purchase
     ...    options=--headless
     ...    options=--no-sandbox
     ...    options=--disable-dev-shm-usage
-    ...    options=--disable-gpu
 
     # The rest of your test steps:
     Maximize Browser Window
