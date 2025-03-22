@@ -7,6 +7,8 @@ Swag Labs Purchase
 
     # 1) Open the page and log in
     Open Browser    https://ulissescamargo.github.io/STCourse/swag_labs.html    Chrome
+    ...    options=add_argument("--headless"),add_argument("--no-sandbox"),add_argument("--disable-dev-shm-usage"),add_argument("--disable-gpu")
+
     Maximize Browser Window
     Wait Until Element Is Visible    id:username
     Sleep    1s
